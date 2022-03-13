@@ -1,8 +1,9 @@
 import requests
 
-def search():
+def search(nickname):
     us = open("list.txt", "r")
-    user=input("Inserisci il nick: ")
+    user=nickname
+    print("Inizio la ricerca del nick " + nickname)
     for line in us:
         url = "https://tmi.twitch.tv/group/user/"+line.lower()[:-1]+"/chatters"
         r=requests.get(url).json()
